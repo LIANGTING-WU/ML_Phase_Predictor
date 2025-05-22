@@ -1,6 +1,7 @@
 # ML Phase Predictor
 
 This repository contains a Google Colab notebook for predicting material phases (P2 or O3) based on ionic parameters computed from input compositions. The prediction is done using a pre-trained Deep Neural Network (DNN) model.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/your_notebook.ipynb)
 
 ---
 
