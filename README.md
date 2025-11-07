@@ -1,23 +1,52 @@
 # ML Phase Predictor
 
-This repository contains a Google Colab notebook for predicting material phases (P2 or O3) based on ionic parameters computed from input compositions. The prediction is done using a pre-trained Deep Neural Network (DNN) model.
+This repository provides a complete workflow for predicting material phases (P2 or O3) using machine learning, based on ionic parameters computed from input compositions.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/Phase_Predictor.ipynb)
+It includes tools for feature calculation, training multiple ML models (including a DNN), and a final predictor that uses Monte Carlo (MC) dropout to assess prediction uncertainty.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/Model_Training.ipynb)
-
-**Try it online on Hugging Face Spaces!**  
+**Try the live prediction tool on Hugging Face Spaces!** This GUI provides an easy-to-use interface for the trained model, including uncertainty estimation.  
 [![Open in HF Spaces](https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/LIANGTING-WU/Phase_Predictor)
 
 ---
 
-## Features
+## Repository Contents & Workflow
 
-- Input custom compositions in a specified format
-- Compute ionic parameters automatically from composition data
-- Normalize input features using saved scaler
-- Predict phase label using trained DNN model
-- Fully reproducible and easy to use in Google Colab
+This project is broken down into several notebooks that represent a full machine learning pipeline, from data processing to final prediction.
+
+### 1. Feature Calculator
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/Feature_Calculator.ipynb)
+
+* **`Feature_Calculator.ipynb`**: This notebook contains the Python code used to process raw chemical formulas and compute the specific ionic-based features required for model training.
+
+### 2. Model Training
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/Model_Training.ipynb)
+
+* **`Model_Training.ipynb`**: This notebook reads the features from `DNN-270-Training.csv` and trains several machine learning models for comparison:
+    * Logistic Regression (LR)
+    * Support Vector Machine (SVM)
+    * Naive Bayes (NB)
+    * Random Forest (RF)
+    * k-Nearest Neighbors (k-NN)
+    * Deep Neural Network (DNN)
+* It also includes feature interpretability analysis using **SHAP**.
+
+### 3. Data Analysis & Visualization
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/Raincloud_Plot_and_PCA.ipynb)
+
+* **`Raincloud_Plot_and_PCA.ipynb`**: This notebook visualizes the feature distributions of the 270-sample training set and the 80-sample independent test set using **Raincloud plots**. It also performs **Principal Component Analysis (PCA)** to visualize the dataset.
+
+### 4. Phase Predictor (with Uncertainty)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/Phase_Predictor.ipynb)
+
+* **`Phase_Predictor.ipynb`**: This is the final prediction tool that uses the pre-trained DNN model.
+* It performs **Monte Carlo (MC) dropout** with **1,000 forward passes** to calculate not only the predicted probability but also the **uncertainty** (standard deviation) of the prediction.
+
+---
+
+## Datasets
+
+* **`DNN-270-Training.csv`**: Contains the 270 compositions used for training and validating the models.
+* **`Full-Dataset-350.csv`**: The complete dataset, which includes the 270 training samples plus an 80-sample independent testing set.
 
 ---
 
@@ -30,21 +59,16 @@ This repository contains a Google Colab notebook for predicting material phases 
 - numpy
 - shap
 
-All dependencies are installed automatically in the provided Colab notebook.
+All dependencies are installed automatically in the provided Colab notebooks.
 
 ---
 
-## Usage Instructions
+## Usage Example
 
-### 1. Clone or download this repository
-
-You can open the provided Google Colab notebook directly or download it and upload to your Colab.
-
-### 2. Prepare your input data
-
-Input your composition data in the following format inside the notebook:
+To use the notebooks (e.g., `Feature_Calculator.ipynb` or `Phase_Predictor.ipynb`), you can prepare your input data in the following format:
 
 ```python
+# Example format for new compositions
 data = [
     [36992, 'P2', 0.69, {'Mn': 0.77, 'Fe': 0.08, 'Mg': 0.15, 'O': 2.0}]
 ]
