@@ -4,6 +4,8 @@ This repository contains a Google Colab notebook for predicting material phases 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/Phase_Predictor.ipynb)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LIANGTING-WU/ML_Phase_Predictor/blob/main/Model_Training.ipynb)
+
 **Try it online on Hugging Face Spaces!**  
 [![Open in HF Spaces](https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/LIANGTING-WU/Phase_Predictor)
 
