@@ -1,3 +1,7 @@
+If you use this classifier to help your research, please cite the following article:
+
+Liang-Ting Wu, Milica Zdravković, Dijana Milosavljević, Konstantin Köster, Olivier Guillon, Jyh-Chiang Jiang, Payam Kaghazchi*. Prediction of Structural Stability of Layered Oxide Cathode Materials: Combination of Machine Learning and Ab Initio Thermodynamics. Adv. Energy Mater., 2025, Early View. https://doi.org/10.1002/aenm.202505470
+
 # ML Phase Predictor
 
 This repository provides a complete workflow for predicting material phases (P2 or O3) using machine learning, based on ionic parameters computed from input compositions.
