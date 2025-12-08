@@ -1,6 +1,6 @@
 If you use this classifier to help your research, please cite the following article:
 
-Liang-Ting Wu, Milica Zdravković, Dijana Milosavljević, Konstantin Köster, Olivier Guillon, Jyh-Chiang Jiang, Payam Kaghazchi*. Prediction of Structural Stability of Layered Oxide Cathode Materials: Combination of Machine Learning and Ab Initio Thermodynamics. Adv. Energy Mater., 2025, Early View. https://doi.org/10.1002/aenm.202505470
+Liang-Ting Wu, Milica Zdravković, Dijana Milosavljević, Konstantin Köster, Olivier Guillon, Jyh-Chiang Jiang, and Payam Kaghazchi*. Prediction of Structural Stability of Layered Oxide Cathode Materials: Combination of Machine Learning and Ab Initio Thermodynamics. _Adv. Energy Mater_., **2025**, Early View. https://doi.org/10.1002/aenm.202505470
 
 # ML Phase Predictor
 
