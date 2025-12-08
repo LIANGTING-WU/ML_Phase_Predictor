@@ -30,7 +30,7 @@ This project is broken down into several notebooks that represent a full machine
     * Support Vector Machine (SVM)
     * Naive Bayes (NB)
     * Random Forest (RF)
-    * k-Nearest Neighbors (k-NN)
+    * _k_-Nearest Neighbors (_k_-NN)
     * Deep Neural Network (DNN)
 * It also includes feature interpretability analysis using **SHAP**.
 
